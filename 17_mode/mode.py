@@ -11,3 +11,8 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    most = ''
+    for num in set(nums):
+        if nums.count(num) >= nums.count (most):
+            most = num
+    return most
