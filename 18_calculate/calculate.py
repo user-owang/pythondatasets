@@ -26,3 +26,14 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
         
     """
+    operations = {
+        'add' : a + b,
+        'multiply' : a * b,
+        'subtract' : a - b,
+        'divide' : a / b
+    }
+    if list(operations.keys()).count(operation):
+        if make_int:
+            return f'{message} {int(operations[operation])}'
+        return f'{message} {operations[operation]}'
+    return None
