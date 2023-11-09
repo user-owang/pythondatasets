@@ -10,3 +10,15 @@ def same_frequency(num1, num2):
         >>> same_frequency(1212, 2211)
         True
     """
+    lst1 = list(f'{num1}')
+    lst2 = list(f'{num2}')
+
+    freq1 = dict()
+    freq2 = dict()
+
+    for digit in set(lst1):
+        freq1[digit] = lst1.count(digit)
+    for digit in set(lst2):
+        freq2[digit] = lst2.count(digit)
+    
+    return freq1 == freq2
