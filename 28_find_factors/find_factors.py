@@ -13,3 +13,8 @@ def find_factors(num):
     >>> find_factors(321421)
     [1, 293, 1097, 321421]
     """
+    answer = [1,num]
+    for int in range(2,num):
+        if num % int == 0:
+            answer.insert(len(answer) -1,int)
+    return answer
