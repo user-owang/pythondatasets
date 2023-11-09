@@ -30,3 +30,19 @@ def includes(collection, sought, start=None):
         >>> includes({"apple": "red", "berry": "blue"}, "blue")
         True
     """
+    if type(collection) is set:
+        return {sought}.issubset(collection)
+    if type(collection) is dict:
+        for key in collection:
+            if collection[key] == sought:
+                return True
+    if not start:
+        for item in collection:
+            if item == sought:
+                return True
+    if start and type(collection) is not set and type(collection) is not dict:
+        for index in range(start,len(collection)):
+            if collection[index] == sought:
+                return True
+
+    return False
