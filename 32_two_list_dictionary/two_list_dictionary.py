@@ -15,3 +15,10 @@ def two_list_dictionary(keys, values):
         >>> two_list_dictionary(['a', 'b', 'c'], [1, 2, 3, 4])
         {'a': 1, 'b': 2, 'c': 3}
    """
+    answer = dict()
+    for index in range(0,len(keys)):
+        if index >= len(values):
+            answer[keys[index]] = None
+        if index < len(values):
+            answer[keys[index]] = values[index]
+    return answer
